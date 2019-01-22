@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />    
+        <title>Page Title</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <form id="surveyForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" id="nameInput" aria-describedby="emailHelp" placeholder="Enter your name">                
+            </div>
+
+            <div class="form-group">
+                <label>Link to Photo</label>
+                <input class="form-control" id="photoInput" placeholder="Enter a link to a photo">
+            </div>
+
+            <div class="form-group">
+                <label>This is the text of the question.</label>
+                <select class="form-control" id="question1">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question2">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question3">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question4">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question5">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question6">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question7">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question8">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question9">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="question10">
+                    <option selected disabled hidden value="">Select an option</option>
+                    <option value="1">1 (strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (strongly agree)</option>
+                </select>
+            </div>
+        
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+        </form>
+
+        <div class="row">
+            <a href="/api/friends">API friends list</a>
+        </div>
+
+        <div class="row">
+            <a href="https://github.com/kennethchung5/FriendFinder">GitHub</a>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Best Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="nameDisplay"></span>
+                        <img id="photoDisplay" src="" width="100%" height="100%">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script type="text/javascript">
+
+        function validateForm() {
+            if ($("#nameInput").val().trim() === "" || $("#photoInput").val().trim() === "") {
+                return false;
+            }
+
+            for (var i = 1; i <= 10; i++) {
+                if ($("#question" + i).val() === null) {
+                    return false
+                }
+            }            
+
+            return true;
+        };
+
+        $("#surveyForm").on("submit", function() {
+            event.preventDefault();
+
+            // alert("the value of nameInput is: " + $("#nameInput").val());
+            // alert("The value of question1 is: " + $("#question1").val());
+
+            if (validateForm()) {
+            
+                var newFriend = {
+                    name: $("#nameInput").val().trim(),
+                    photo: $("#photoInput").val().trim(),
+                    scores: []
+                }
+
+                for (var i = 1; i <= 10; i++) {
+                    newFriend.scores.push($("#question" + i).val());
+                };
+
+
+                $.post("/api/friends", newFriend, function(data) {                                
+
+                    $("#nameDisplay").text("You matched with " + data.name);
+                    $("#photoDisplay").attr("src", data.photo);
+
+                    $("#resultModal").modal("toggle");
+
+
+                    //clear form 
+
+                    $("#nameInput").val("");
+                    $("#photoInput").val("");
+                    $("select").val(null);
+
+                })
+
+            } else {
+                alert("Please fill out all fields!");
+            };
+
+        });        
+
+    </script>
+    
+</body>
+</html>
