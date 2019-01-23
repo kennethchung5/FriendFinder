@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {        
 
-        console.log(req.body);
+        // console.log(req.body);
 
         newScores = req.body.scores
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
 
         console.log("The least difference is: " + leastDifference);
 
-        // friendsData.push(req.body);
+        friendsData.push(req.body);
 
         res.send(friendsData[bestMatch])
         
